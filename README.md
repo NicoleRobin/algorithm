@@ -19,7 +19,7 @@
 [5]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseList/ReverseList.cpp
 [6]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/SelectSort/SelectSort.cpp
 [7]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ShellSort/ShellSort.cpp
-[8]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/TowSum/TowSum.cpp
-[9]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/AddTowNumbers/AddTowNumbers.cpp
+[8]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/TwoSum/TwoSum.cpp
+[9]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/AddTwoNumbers/AddTwoNumbers.cpp
 
 
