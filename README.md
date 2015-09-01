@@ -8,8 +8,8 @@
 #### [翻转单链表][5]
 #### [选择排序][6]
 #### [希尔排序][7]
-#### [Tow Sum][8]
-#### [Add Tow Numbers][9]
+#### [Two Sum][8]
+#### [Add Two Numbers][9]
 
 
 [1]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/BubbleSort/BubbleSort.cpp
