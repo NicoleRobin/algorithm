@@ -74,14 +74,14 @@ public:
 
 int main()
 {
-	Solution towsum;
+	Solution solution;
 	vector<int> nums;
 	vector<int> res;
 	nums.push_back(2);
 	nums.push_back(3);
 	nums.push_back(4);
 
-	res = towsum.twoSum(nums, 6);
+	res = solution.twoSum(nums, 6);
 
 	copy(res.begin(), res.end(), ostream_iterator<int>(cout, ","));
 }
