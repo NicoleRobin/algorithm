@@ -12,7 +12,7 @@
 #### leetcode-[Add Two Numbers][9]
 #### leetcode-[Reverse Integer][10]
 #### leetcode-[Valid Number][11]
-#### leetcode-[String To Inteter][12]
+#### leetcode-[String To Integer][12]
 
 
 [1]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/BubbleSort/BubbleSort.cpp
