@@ -8,8 +8,11 @@
 #### [翻转单链表][5]
 #### [选择排序][6]
 #### [希尔排序][7]
-#### [Two Sum][8]
-#### [Add Two Numbers][9]
+#### leetcode-[Two Sum][8]
+#### leetcode-[Add Two Numbers][9]
+#### leetcode-[Reverse Integer][10]
+#### leetcode-[Valid Number][11]
+#### leetcode-[String To Inteter][12]
 
 
 [1]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/BubbleSort/BubbleSort.cpp
@@ -21,5 +24,9 @@
 [7]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ShellSort/ShellSort.cpp
 [8]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/TwoSum/TwoSum.cpp
 [9]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/AddTwoNumbers/AddTwoNumbers.cpp
+[10]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseInteger/ReverseInteger.cpp
+[11]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ValidNumber/ValidNumber.cpp
+[12]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/StringToInteger/StringToInteger.cpp
+
 
 
