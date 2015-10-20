@@ -18,7 +18,7 @@
 #### leetcode-08 [String To Integer][008]
 #### leetcode-26 [Remove Duplicates from Sorted Array][026]
 #### leetcode-65 [Valid Number][065]
-#### leetcode-80 [RemoveDuplicatesFromSortedArray][080]
+#### leetcode-80 [Remove Duplicates from Sorted Array II][080]
 #### leetcode-136 [Single Number][136]
 #### leetcode-137 [Single Number II][137]
 #### leetcode-190 [Reverse Bits][190]
