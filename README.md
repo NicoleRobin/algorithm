@@ -16,7 +16,9 @@
 #### leetcode-02 [Add Two Numbers][002]
 #### leetcode-07 [Reverse Integer][007]
 #### leetcode-08 [String To Integer][008]
+#### leetcode-26 [Remove Duplicates from Sorted Array][026]
 #### leetcode-65 [Valid Number][065]
+#### leetcode-80 [RemoveDuplicatesFromSortedArray][080]
 #### leetcode-136 [Single Number][136]
 #### leetcode-137 [Single Number II][137]
 #### leetcode-190 [Reverse Bits][190]
@@ -38,7 +40,9 @@
 [002]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/AddTwoNumbers/AddTwoNumbers.cpp
 [007]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseInteger/ReverseInteger.cpp
 [008]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/StringToInteger/StringToInteger.cpp
+[026]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.cpp
 [065]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ValidNumber/ValidNumber.cpp
+[080]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.cpp
 [136]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/SingleNumber/SingleNumber.cpp
 [137]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/SingleNumberII/SingleNumberII.cpp
 [190]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseBits/ReverseBits.cpp
