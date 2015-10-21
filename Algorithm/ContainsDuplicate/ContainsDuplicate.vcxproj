@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DC83A39D-9DA9-4CA3-AEFB-9AB33F8A49D4}</ProjectGuid>
+    <ProjectGuid>{0F873A4A-C816-4207-BA1D-02ECD04C7EC3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SingleNuberII</RootNamespace>
-    <ProjectName>SingleNumberII</ProjectName>
+    <RootNamespace>ContainsDuplicate</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -79,7 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SingleNumberII.cpp" />
+    <ClCompile Include="ContainsDuplicate.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
