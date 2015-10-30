@@ -73,6 +73,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RemoveLinkedListElements", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RemoveNthNodeFromEndOfList", "RemoveNthNodeFromEndOfList\RemoveNthNodeFromEndOfList.vcxproj", "{52120C23-242D-4EB3-A1AA-28CECFCEC7B4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RemoveDuplicatesFromSortedListII", "RemoveDuplicatesFromSortedListII\RemoveDuplicatesFromSortedListII.vcxproj", "{57EF9DEA-6E2D-42F6-9662-9E7655032BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -219,6 +221,10 @@ Global
 		{52120C23-242D-4EB3-A1AA-28CECFCEC7B4}.Debug|Win32.Build.0 = Debug|Win32
 		{52120C23-242D-4EB3-A1AA-28CECFCEC7B4}.Release|Win32.ActiveCfg = Release|Win32
 		{52120C23-242D-4EB3-A1AA-28CECFCEC7B4}.Release|Win32.Build.0 = Release|Win32
+		{57EF9DEA-6E2D-42F6-9662-9E7655032BEB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{57EF9DEA-6E2D-42F6-9662-9E7655032BEB}.Debug|Win32.Build.0 = Debug|Win32
+		{57EF9DEA-6E2D-42F6-9662-9E7655032BEB}.Release|Win32.ActiveCfg = Release|Win32
+		{57EF9DEA-6E2D-42F6-9662-9E7655032BEB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
