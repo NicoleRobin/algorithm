@@ -21,6 +21,7 @@
 #### leetcode-26 [Remove Duplicates from Sorted Array][026]
 #### leetcode-65 [Valid Number][065]
 #### leetcode-80 [Remove Duplicates from Sorted Array II][080]
+#### leetcode-82 [Remove Duplicates from Sorted List II][082]
 #### leetcode-83 [Remove Duplicates from Sorted List][083]
 #### leetcode-136 [Single Number][136]
 #### leetcode-137 [Single Number II][137]
@@ -56,6 +57,7 @@
 [026]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/RemoveDuplicatesFromSortedArray/RemoveDuplicatesFromSortedArray.cpp
 [065]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ValidNumber/ValidNumber.cpp
 [080]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/RemoveDuplicatesFromSortedArrayII/RemoveDuplicatesFromSortedArrayII.cpp
+[082]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/RemoveDuplicatesFromSortedListII/RemoveDuplicatesFromSortedListII.cpp
 [083]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/RemoveDuplicatesFromSortedList/RemoveDuplicatesFromSortedList.cpp
 [136]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/SingleNumber/SingleNumber.cpp
 [137]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/SingleNumberII/SingleNumberII.cpp
