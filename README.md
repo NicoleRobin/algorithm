@@ -10,6 +10,8 @@
 
 ## 常见面试题
 #### [翻转单链表][Reverse]
+#### [string] [string]
+#### [memcpy] [memcpy]
 
 ## leetcode
 #### leetcode-01 [Two Sum][001]
@@ -47,6 +49,8 @@
 [Shell]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ShellSort/ShellSort.cpp
 
 [Reverse]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseList/ReverseList.cpp
+[string]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/string
+[memcpy]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/memcpy
 
 [001]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/TwoSum/TwoSum.cpp
 [002]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/AddTwoNumbers/AddTwoNumbers.cpp
