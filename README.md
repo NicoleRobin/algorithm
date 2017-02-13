@@ -13,6 +13,8 @@
 #### [冒泡排序][Bubble]
 #### [快速排序][Quick]
 
+#### [归并排序][Merge]
+#### [基数排序][Radix]
 
 ## 常见面试题
 #### [翻转单链表][Reverse]
@@ -53,6 +55,8 @@
 [Quick]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/QuickSort/QuickSort.cpp
 [Select]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/SelectSort/SelectSort.cpp
 [Shell]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/ShellSort/ShellSort.cpp
+[Merge]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/MergeSort/MergeSort.cpp
+[Radix]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/RadixSort/RadixSort.cpp
 
 [Reverse]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseList/ReverseList.cpp
 [string]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/string
