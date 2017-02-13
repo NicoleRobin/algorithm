@@ -1,12 +1,18 @@
 # 常见算法代码
 
 ## 常见排序
-#### [冒泡排序][Bubble]
-#### [堆排序][Heap]
-#### [插入排序][Insert]
-#### [快速排序][Quick]
-#### [选择排序][Select]
+### 插入排序
+#### [直接插入排序][Insert]
 #### [希尔排序][Shell]
+
+### 选择排序
+#### [简单选择排序][Select]
+#### [堆排序][Heap]
+
+### 交换排序
+#### [冒泡排序][Bubble]
+#### [快速排序][Quick]
+
 
 ## 常见面试题
 #### [翻转单链表][Reverse]
@@ -41,12 +47,12 @@
 
 
 
-[Bubble]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/BubbleSort/BubbleSort.cpp
-[Heap]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/HeapSort/HeapSort.cpp
-[Insert]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/InsertSort/InsertSort.cpp
-[Quick]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/QuickSort/QuickSort.cpp
-[Select]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/SelectSort/SelectSort.cpp
-[Shell]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ShellSort/ShellSort.cpp
+[Bubble]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/BubbleSort/BubbleSort.cpp
+[Heap]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/HeapSort/HeapSort.cpp
+[Insert]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/InsertSort/InsertSort.cpp
+[Quick]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/QuickSort/QuickSort.cpp
+[Select]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/SelectSort/SelectSort.cpp
+[Shell]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/Sort/ShellSort/ShellSort.cpp
 
 [Reverse]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/ReverseList/ReverseList.cpp
 [string]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/string
