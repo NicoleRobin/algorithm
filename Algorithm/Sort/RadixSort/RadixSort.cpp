@@ -20,6 +20,26 @@ void swap(int* x, int* y)
 
 void RadixSort(int a[], int len)
 {
+	int iMax = 0;
+	for (int i = 0; i < n; ++i)
+	{
+		if (abs(a[i]) > iMax)
+		{
+			iMax = abs(a[i]);
+		}
+	}
+
+	int iRadix = 0;
+	while (iMax > 0)
+	{
+		iMax /= 10;
+		iRadix++;
+	}
+
+	for (int i = 0; i < iRadix; ++i)
+	{
+		
+	}
 }
 
 int main(void)
