@@ -9,11 +9,11 @@
 #### [快速排序][Quick]
 #### [归并排序][Merge]
 #### [基数排序][Radix]
-#### [通排序][Bucket]
+#### [桶排序][Bucket]
 #### [计数排序][Counting]
 
 ## 常见面试题
-#### [翻转单链表][Reverse]
+#### [reverse list][Reverse]
 #### [string] [string]
 #### [memcpy] [memcpy]
 
