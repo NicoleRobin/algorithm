@@ -1,3 +1,6 @@
+/*
+* g++ -g -o SelectSort ./SelectSort.cpp
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,23 +25,21 @@ void SelectSort(int a[], int len)
 {
 	for (int i = 0; i < len; i++)
 	{
-		int temp;
-		int k;
-		temp = a[i];
-		for (int j = i; j < len - 1; j++)
+		int iMin = a[i];
+		int iMinIdx = i;
+		for (int j = i; j < len; j++)
 		{
-			if (a[j] < temp)
+			if (a[j] < iMin)
 			{
-				temp = a[j];
-				k = j;
-			}
-			if (k != i)
-			{ // swap
-				swap(&a[i], &temp);
-				swap(&temp, &a[k]);
+				iMin = a[j];
+				iMinIdx = j;
 			}
 		}
-		
+		if (iMinIdx != i)
+		{ // swap
+			swap(&a[i], &a[iMinIdx]);
+		}
+		Print(a, 10);	
 	}
 }
 
