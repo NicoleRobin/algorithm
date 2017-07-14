@@ -31,8 +31,15 @@ struct listNode* reveriseList2(struct listNode *head)
 	else
 	{
 		struct listNode *p = reveriseList2(head->next);
-		p->next->next = head;
+		// 找到尾节点
+		struct listNode *tail = p;
+		while (tail->next)
+		{
+			tail = tail->nex;
+		}
+		tail->next = head;
 		head->next = NULL;
+		
 		return p;
 	}
 }
