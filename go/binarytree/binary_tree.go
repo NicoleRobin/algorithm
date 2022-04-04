@@ -33,13 +33,12 @@ func LevelPrintTree(root *TreeNode) {
 	for len(printingNodes) > 0 {
 		tmpNodes := []*TreeNode{}
 		for _, node := range printingNodes {
-			fmt.Printf("%d\t", node.Val)
-			if node.Left != nil {
+			if node != nil {
+				fmt.Printf("%d", node.Val)
 				tmpNodes = append(tmpNodes, node.Left)
-			}
-			if node.Right != nil {
 				tmpNodes = append(tmpNodes, node.Right)
 			}
+			fmt.Printf("\t")
 		}
 		fmt.Println()
 		printingNodes = tmpNodes
