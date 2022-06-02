@@ -26,27 +26,44 @@ func minPathSum(grid [][]int) int {
 
 	for i := xLen - 1; i >= 0; i-- {
 		for j := yLen - 1; j >= 0; j-- {
-			right, down := -1, -1
-			if j+1 < yLen {
-				right = dp[i][j+1]
-			}
-			if i+1 < xLen {
-				down = dp[i+1][j]
-			}
 
-			dp[i][j] = grid[i][j]
 			// 从右侧和下侧选择最小值，但是需要考虑无效值
-			if right < 0 && down > 0 {
-				dp[i][j] += down
-			}
-			if down < 0 && right > 0 {
-				dp[i][j] += right
-			}
-			if right > 0 && down > 0 {
-				if right > down {
+			/*
+				right, down := -1, -1
+				if j+1 < yLen {
+					right = dp[i][j+1]
+				}
+				if i+1 < xLen {
+					down = dp[i+1][j]
+				}
+				dp[i][j] = grid[i][j]
+				if right < 0 && down > 0 {
 					dp[i][j] += down
-				} else {
+				}
+				if down < 0 && right > 0 {
 					dp[i][j] += right
+				}
+				if right > 0 && down > 0 {
+					if right > down {
+						dp[i][j] += down
+					} else {
+						dp[i][j] += right
+					}
+				}
+			*/
+
+			// 根据不同情况进行处理
+			if i == xLen-1 && j == yLen-1 {
+				dp[i][j] = grid[i][j]
+			} else if i == xLen-1 && j < yLen-1 {
+				dp[i][j] = grid[i][j] + dp[i][j+1]
+			} else if j == yLen-1 && i < xLen-1 {
+				dp[i][j] = grid[i][j] + dp[i+1][j]
+			} else {
+				if dp[i+1][j] < dp[i][j+1] {
+					dp[i][j] = grid[i][j] + dp[i+1][j]
+				} else {
+					dp[i][j] = grid[i][j] + dp[i][j+1]
 				}
 			}
 		}
