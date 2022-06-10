@@ -41,11 +41,29 @@ func firstMissingPositive1(nums []int) int {
 }
 
 /*
+置换方法，将每个数字置换到正确的位置
 时间复杂度：O(n)
 空间复杂度：O(1)
+
+3 4 -1 1
+-1 4 3 1
+-1 1 3 4
+1 -1 3 4
 */
 func firstMissingPositive2(nums []int) int {
-	return 0
+	for i := 0; i < len(nums); i++ {
+		for nums[i] > 0 && nums[i] <= len(nums) && nums[i] != nums[nums[i]-1] {
+			// 把num替换到正确的位置上nums[num-1]
+			nums[i], nums[nums[i]-1] = nums[nums[i]-1], nums[i]
+		}
+	}
+
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != i+1 {
+			return i + 1
+		}
+	}
+	return len(nums)
 }
 
 func main() {
@@ -56,7 +74,8 @@ func main() {
 		{7, 8, 9, 11, 12},
 	}
 	for _, nums := range testCases {
-		result := firstMissingPositive1(nums)
+		// result := firstMissingPositive1(nums)
+		result := firstMissingPositive2(nums)
 		fmt.Printf("nums:%v, result:%d\n", nums, result)
 	}
 }
