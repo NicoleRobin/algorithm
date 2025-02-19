@@ -23,6 +23,14 @@ type 等于 1 时，将节点值范围在 [x, y] 的节点均染红
 操作个数的范围为10^9，因此该算法时间复杂度必须小于等于O(n)
 求区间的问题，和之前遇到的给出一段账号上下线时间计算最大在线用户个数很像
 */
+package main
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 const (
 	OP_TYPE_BLUE = 0
 	OP_TYPE_RED  = 1
