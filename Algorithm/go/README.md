@@ -7,3 +7,8 @@
 
 [62]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/go/62/62.go
 [541]: https://github.com/NicoleRobin/algorithm/blob/master/Algorithm/go/541/541.go 
+
+# 参考资料
+1、https://github.com/donnemartin/system-design-primer
+2、https://github.com/jwasham/coding-interview-university
+3、
