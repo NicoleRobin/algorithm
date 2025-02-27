@@ -29,19 +29,37 @@ func LevelPrintTree(root *TreeNode) {
 		return
 	}
 
+	var allLevelPrintingNodes [][]*TreeNode
 	printingNodes := []*TreeNode{root}
 	for len(printingNodes) > 0 {
-		tmpNodes := []*TreeNode{}
+		allLevelPrintingNodes = append(allLevelPrintingNodes, printingNodes)
+		var tmpNodes []*TreeNode
 		for _, node := range printingNodes {
 			if node != nil {
-				fmt.Printf("%d", node.Val)
+				// fmt.Printf("%d", node.Val)
 				tmpNodes = append(tmpNodes, node.Left)
 				tmpNodes = append(tmpNodes, node.Right)
+			}
+			// fmt.Printf("\t")
+		}
+		// fmt.Println()
+		printingNodes = tmpNodes
+	}
+
+	for i := 0; i < len(allLevelPrintingNodes); i++ {
+		for j := i; j < len(allLevelPrintingNodes); j++ {
+			fmt.Printf("\t")
+		}
+
+		for j := 0; j < len(allLevelPrintingNodes[i]); j++ {
+			if allLevelPrintingNodes[i][j] != nil {
+				fmt.Printf("%d", allLevelPrintingNodes[i][j].Val)
+			} else {
+				fmt.Printf(" ")
 			}
 			fmt.Printf("\t")
 		}
 		fmt.Println()
-		printingNodes = tmpNodes
 	}
 }
 
@@ -77,16 +95,18 @@ func BuildTree(nums []int) *TreeNode {
 			}
 			nums = nums[1:]
 		}
-		if currentNode.Right == nil {
-			if nums[0] != -1 {
-				currentNode.Right = &TreeNode{
-					Val: nums[0],
+		if len(nums) > 0 {
+			if currentNode.Right == nil {
+				if nums[0] != -1 {
+					currentNode.Right = &TreeNode{
+						Val: nums[0],
+					}
+					buildingNodes = append(buildingNodes, currentNode.Right)
 				}
-				buildingNodes = append(buildingNodes, currentNode.Right)
+				nums = nums[1:]
 			}
-			nums = nums[1:]
-			buildingNodes = buildingNodes[1:]
 		}
+		buildingNodes = buildingNodes[1:]
 	}
 
 	return root
