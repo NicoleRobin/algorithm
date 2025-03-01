@@ -32,9 +32,24 @@ func lowestCommonAncestor(root, p, q *binarytree.TreeNode) *binarytree.TreeNode 
 	return left
 }
 
+func lowestCommonAncestor1(root, p, q *binarytree.TreeNode) *binarytree.TreeNode {
+	if root == nil {
+		return nil
+	}
+
+	left := lowestCommonAncestor(root.Left, p, q)
+	right := lowestCommonAncestor(root.Right, p, q)
+	if (left != nil && right != nil) ||
+		(left != nil && (root == p || root == q)) ||
+		(right != nil && (root == p || root == q)) {
+		return root
+	}
+	return nil
+}
+
 func main() {
 	root := binarytree.BuildTree([]int{3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4})
 	binarytree.LevelPrintTree(root)
-	parentNode := lowestCommonAncestor(root, root.Left, root.Right)
+	parentNode := lowestCommonAncestor1(root, root.Left, root.Right)
 	fmt.Println(parentNode.Val)
 }
