@@ -1,6 +1,13 @@
 package main
 
+<<<<<<< Updated upstream
 import "github.com/nicolerobin/algorithm/go/binarytree"
+=======
+import (
+	"fmt"
+	"github.com/nicolerobin/algorithm/go/binarytree"
+)
+>>>>>>> Stashed changes
 
 /**
  * Definition for a binary tree node.
@@ -11,6 +18,7 @@ import "github.com/nicolerobin/algorithm/go/binarytree"
  * }
  */
 func pathSum(root *binarytree.TreeNode, targetSum int) int {
+<<<<<<< Updated upstream
 	if root == nil {
 		return 0
 	}
@@ -55,4 +63,30 @@ func pathSum1(root *binarytree.TreeNode, targetSum int) (ans int) {
 }
 
 func main() {
+=======
+	var result int
+	var traverse func(*binarytree.TreeNode, int, bool)
+	traverse = func(nRoot *binarytree.TreeNode, beforeSum int, withBefore bool) {
+		if nRoot == nil {
+			return
+		}
+		if beforeSum+nRoot.Val == targetSum {
+			result++
+		}
+		traverse(nRoot.Left, beforeSum+nRoot.Val, true)
+		traverse(nRoot.Left, 0, true)
+
+		traverse(nRoot.Right, beforeSum+nRoot.Val, true)
+		traverse(nRoot.Right, 0, true)
+	}
+	traverse(root, 0, false)
+	return result
+}
+
+func main() {
+	root := binarytree.BuildTree([]int{1, -1, 2, -1, 3, -1, 4, -1, 5})
+	binarytree.LevelPrintTree(root)
+	result := pathSum(root, 3)
+	fmt.Println(result)
+>>>>>>> Stashed changes
 }
