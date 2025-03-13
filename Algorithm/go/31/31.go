@@ -10,7 +10,7 @@ import (
 func nextPermutation(nums []int) {
 	n := len(nums)
 	i := n - 2
-	// 寻找第一个逆序对
+	// 从后向前，寻找第一个非降序对
 	for i >= 0 && nums[i] >= nums[i+1] {
 		i--
 	}
@@ -24,7 +24,7 @@ func nextPermutation(nums []int) {
 		nums[i], nums[j] = nums[j], nums[i]
 	}
 
-	// 翻转从i+1到结尾的所有数字
+	// 翻转从i+1到结尾的所有数字，因为i+1到结尾的所有数字是降序的，所以反转之后变成升序了
 	reverse(nums[i+1:])
 }
 
