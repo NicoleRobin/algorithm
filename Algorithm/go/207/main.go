@@ -88,8 +88,29 @@ func canFinish2(numCourses int, prerequisites [][]int) bool {
 	return len(result) == numCourses
 }
 
+type TestCase struct {
+	numCourses    int
+	prerequisites [][]int
+}
+
 func main() {
 	fmt.Println("vim-go")
-	result := canFinish1(2, [][]int{{1, 0}, {0, 1}})
-	fmt.Println(result)
+	testCases := []TestCase{
+		{
+			numCourses:    2,
+			prerequisites: [][]int{{1, 0}},
+		},
+		{
+			numCourses:    2,
+			prerequisites: [][]int{{0, 1}, {1, 0}},
+		},
+		{
+			numCourses:    6,
+			prerequisites: [][]int{{3, 0}, {3, 1}, {4, 1}, {4, 2}, {5, 3}, {5, 4}},
+		},
+	}
+	for _, testCase := range testCases {
+		result := canFinish1(testCase.numCourses, testCase.prerequisites)
+		fmt.Printf("prerequistes:%+v, result:%t\n", testCase.prerequisites, result)
+	}
 }
