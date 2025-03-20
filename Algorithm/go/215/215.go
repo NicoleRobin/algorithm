@@ -35,4 +35,7 @@ func quickselect(nums []int, l, r, k int) int {
 
 func main() {
 	fmt.Println("leetcode 215")
+	nums := []int{3, 2, 1, 5, 6, 4}
+	result := findKthLargest(nums, 2)
+	fmt.Println(result)
 }
