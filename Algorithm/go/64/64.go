@@ -71,6 +71,45 @@ func minPathSum(grid [][]int) int {
 	return dp[0][0]
 }
 
+/*
+动态规划
+1、状态定义dp[i][j]：从grid[0][0]到grid[i][j]的最小路径和
+*/
+func minPathSum2(grid [][]int) int {
+	if len(grid) == 0 {
+		return 0
+	}
+
+	mLen := len(grid)
+	nLen := len(grid[0])
+	dp := make([][]int, mLen)
+	for i := 0; i < mLen; i++ {
+		dp[i] = make([]int, nLen)
+	}
+	// 边界状态
+	dp[0][0] = grid[0][0]
+	for i := 1; i < mLen; i++ {
+		dp[i][0] = dp[i-1][0] + grid[i][0]
+	}
+	for j := 1; j < nLen; j++ {
+		dp[0][j] = dp[0][j-1] + grid[0][j]
+	}
+
+	for i := 1; i < mLen; i++ {
+		for j := 1; j < nLen; j++ {
+			dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
+		}
+	}
+	return dp[mLen-1][nLen-1]
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
 func main() {
 	fmt.Println("vim-go")
 	grid := [][]int{
