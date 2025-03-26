@@ -7,7 +7,8 @@ import "fmt"
 1、状态定义：dp[i]：表示以下标i字符结尾的最长有效括号的长度
 2、状态转移方程：
 当前为(时dp[i] = 0
-当前为)时，如果s[i-1]为(，则dp[i] = dp[i-2]+2；当s[i-dp[i-1]-1]为(时，dp[i]=dp[i-1]+2+dp[i-dp[i-1]-2]
+当前为)时，如果s[i-1]为(，则dp[i] = dp[i-2]+2；
+	当s[i-dp[i-1]-1]为(时，dp[i]=dp[i-1]+2+dp[i-dp[i-1]-2]
 */
 func longestValidParentheses(s string) int {
 	result := 0
@@ -40,7 +41,12 @@ func longestValidParentheses(s string) int {
 
 func main() {
 	fmt.Println("vim-go")
-	s := ")()())"
-	result := longestValidParentheses(s)
-	fmt.Println(result)
+	testCases := []string{
+		")()())",
+		"()(())",
+	}
+	for _, testCase := range testCases {
+		result := longestValidParentheses(testCase)
+		fmt.Println("testCase:", testCase, ", result:", result)
+	}
 }
