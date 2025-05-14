@@ -16,9 +16,8 @@ func maximalSquare(matrix [][]byte) int {
 	var maxVal int
 	for i := 0; i < m; i++ {
 		for j := 0; j < n; j++ {
-			if matrix[i][j] == 0 {
+			if matrix[i][j] == byte('0') {
 				dp[i][j] = 0
-
 			} else {
 				if i == 0 || j == 0 {
 					dp[i][j] = 1
@@ -29,9 +28,11 @@ func maximalSquare(matrix [][]byte) int {
 			if dp[i][j] > maxVal {
 				maxVal = dp[i][j]
 			}
+
+			// fmt.Println("dp:", dp)
 		}
 	}
-	return maxVal
+	return maxVal * maxVal
 }
 
 func main() {
@@ -41,10 +42,19 @@ func main() {
 	}{
 		{
 			matrix: [][]byte{
-				{'1', '0', '1', '0', '0'},
-				{'1', '0', '1', '1', '1'},
+				{'0', '1'},
+				{'1', '0'},
 			},
 			expect: 1,
+		},
+		{
+			matrix: [][]byte{
+				{'1', '0', '1', '0', '0'},
+				{'1', '0', '1', '1', '1'},
+				{'1', '1', '1', '1', '1'},
+				{'1', '0', '0', '1', '0'},
+			},
+			expect: 4,
 		},
 	}
 
