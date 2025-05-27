@@ -3,40 +3,80 @@ package main
 import "fmt"
 
 /*
+思路：差分数组+二分查找
+*/
+func minZeroArray(nums []int, queries [][]int) int {
+	left, right := 0, len(queries)
+	if !check(nums, queries, right) {
+		return -1
+	}
+	for left < right {
+		k := (left + right) / 2
+		if check(nums, queries, k) {
+			right = k
+		} else {
+			left = k + 1
+		}
+	}
+	return left
+}
+
+func check(nums []int, queries [][]int, k int) bool {
+	deltaArray := make([]int, len(nums)+1)
+	for i := 0; i < k; i++ {
+		left, right, value := queries[i][0], queries[i][1], queries[i][2]
+		deltaArray[left] += value
+		deltaArray[right+1] -= value
+	}
+
+	prefixSumArray := make([]int, len(nums)+1)
+	var prefixSum int
+	for i, delta := range deltaArray {
+		prefixSum += delta
+		prefixSumArray[i] = prefixSum
+	}
+	for i := 0; i < len(nums); i++ {
+		if prefixSumArray[i] < nums[i] {
+			return false
+		}
+	}
+
+	return true
+}
+
+/*
 思考：
 
 思路：模拟题
 1、
 */
-func minZeroArray(nums []int, queries [][]int) int {
+func minZeroArray1(nums []int, queries [][]int) int {
+	var zeroCount int
+	for _, num := range nums {
+		if num == 0 {
+			zeroCount++
+		}
+	}
+	if zeroCount == len(nums) {
+		return 0
+	}
+
 	ans := -1
 	for i, query := range queries {
-		var nonZeroCount int
-		for _, num := range nums {
-			if num != 0 {
-				nonZeroCount++
-			}
-		}
-		if nonZeroCount == 0 {
-			ans = i
-			break
-		}
-
 		for j := query[0]; j <= query[1]; j++ {
-			if nums[j] < query[2] {
+			if nums[j] == 0 {
+				continue
+			}
+			if nums[j] <= query[2] {
 				nums[j] = 0
+				zeroCount++
 			} else {
 				nums[j] -= query[2]
 			}
 		}
+		// fmt.Println("i:", i, ", nums:", nums, ", zeroCount:", zeroCount)
 
-		nonZeroCount = 0
-		for _, num := range nums {
-			if num != 0 {
-				nonZeroCount++
-			}
-		}
-		if nonZeroCount == 0 {
+		if zeroCount == len(nums) {
 			ans = i + 1
 			break
 		}
