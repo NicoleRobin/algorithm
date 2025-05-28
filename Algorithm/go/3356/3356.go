@@ -4,6 +4,7 @@ import "fmt"
 
 /*
 思路：差分数组+二分查找
+时间复杂度：O((m+n)×logn)，其中 n 是 nums 的长度，m 是 queries 的长度。
 */
 func minZeroArray(nums []int, queries [][]int) int {
 	left, right := 0, len(queries)
