@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 /*
@@ -82,6 +83,9 @@ func (node *DictTreeNode) PreOrderPrint() {
 		}
 		child.PreOrderPrint()
 	}
+}
+
+func findKthNumber1(n int, k int) int {
 }
 
 func main() {
