@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 /*
@@ -86,6 +85,36 @@ func (node *DictTreeNode) PreOrderPrint() {
 }
 
 func findKthNumber1(n int, k int) int {
+	// 计算以 prefix 为根的子树中有多少个合法数字（不超过 n）
+	getCount := func(prefix int, n int) int {
+		count := 0
+		curr := prefix
+		next := prefix + 1
+		for curr <= n {
+			count += min(n+1, next) - curr
+			curr *= 10
+			next *= 10
+		}
+		return count
+	}
+
+	curr := 1
+	k -= 1 // 从 1 开始已经是第一个，所以 k--
+
+	for k > 0 {
+		count := getCount(curr, n)
+		if count <= k {
+			// 跳过当前前缀子树，去下一个兄弟
+			curr += 1
+			k -= count
+		} else {
+			// 进入子树，往下一层
+			curr *= 10
+			k -= 1
+		}
+	}
+
+	return curr
 }
 
 func main() {
