@@ -9,7 +9,7 @@ import (
 1、将所有数字转换为字符串形式，插入到字典树中。
 2、使用字典树的前序遍历来获取第k小的数字。
 */
-func findKthNumber(n int, k int) int {
+func findKthNumber1(n int, k int) int {
 	var ans int
 	dictTree := NewDictTreeNode(0)
 	for i := 1; i <= n; i++ {
@@ -84,7 +84,7 @@ func (node *DictTreeNode) PreOrderPrint() {
 	}
 }
 
-func findKthNumber1(n int, k int) int {
+func findKthNumber(n int, k int) int {
 	// 计算以 prefix 为根的子树中有多少个合法数字（不超过 n）
 	getCount := func(prefix int, n int) int {
 		count := 0
