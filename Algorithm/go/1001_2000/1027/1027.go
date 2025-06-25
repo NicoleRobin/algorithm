@@ -1,5 +1,7 @@
 package main
 
+import "slices"
+
 /*
 思路：动态规划
 dp[i][j]: 表示以 nums[i] 结尾，公差为 j 的最长等差子序列的长度。
@@ -23,6 +25,28 @@ func longestArithSeqLength(nums []int) int {
 	}
 
 	return ans + 1
+}
+
+/*
+思路：动态规划
+
+*/
+func longestArithSeqLength3(nums []int) int {
+	ans := 2
+	m := slices.Max(nums)
+	f := make([]int, m+1)
+	for d := -m; d <= m; d++ {
+		clear(f)
+		for _, x := range nums {
+			if 0 <= x-d && x-d <= m {
+				f[x] = f[x-d] + 1
+				ans = max(ans, f[x])
+			} else {
+				f[x] = 1
+			}
+		}
+	}
+	return ans
 }
 
 func main() {
