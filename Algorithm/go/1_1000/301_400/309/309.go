@@ -23,11 +23,14 @@ dp[0][1] = 0 // 第一天不持有股票
 func maxProfit(prices []int) int {
 	n := len(prices)
 	dp := make([][2]int, n+2)
+	// 为什么要设置为math.MinInt？
+	// 对于第 1 天 (i=1)，dp[i-2][1] 是无效的，因为没有第 -1 天的状态。因此，为了避免非法状态影响结果，dp[1][0] 被设置为一个极小值 (math.MinInt)，表示不可能的收益。
 	dp[1][0] = math.MinInt
 	for i, price := range prices {
 		dp[i+2][0] = max(dp[i+1][0], dp[i][1]-price)   // 持有股票
 		dp[i+2][1] = max(dp[i+1][1], dp[i+1][0]+price) // 不持有股票
 	}
+	// 循环中i的最大值为n-1，所以需要加2来处理最后一天的状态
 	return dp[n+1][1] // 返回最后一天不持有股票的最大收益
 }
 
