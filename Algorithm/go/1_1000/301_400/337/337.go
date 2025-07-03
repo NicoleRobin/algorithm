@@ -9,10 +9,8 @@ type TreeNode struct {
 /*
 思路：
 1、选当前节点：左右儿子都不能选；不选当前节点：左右儿子可选可不选
-
 */
 func rob(root *TreeNode) int {
-	var ans int
 	if root == nil {
 		return 0
 	}
@@ -25,15 +23,12 @@ func rob(root *TreeNode) int {
 		leftRob, leftNotRob := dfs(root.Left)
 		rightRob, rightNotRob := dfs(root.Right)
 
-		return max(root.Val+leftNotPick, rightNotPick)
+		return root.Val + leftNotRob + rightNotRob, max(leftRob, leftNotRob) + max(rightRob, rightNotRob)
 	}
-	dfs(root)
-	left := rob(root.Left)
-	right := rob(root.Right)
+	rootRob, rootNotRob := dfs(root)
 
-	return max(left+right, root.Val+rob(root.Left.Left)+rob(root.Left.Right)+rob(root.Right.Left)+rob(root.Right.Right))
+	return max(rootRob, rootNotRob)
 }
 
 func main() {
-
 }
