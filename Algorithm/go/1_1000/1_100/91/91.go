@@ -70,7 +70,7 @@ func numDecodings(s string) int {
 		}
 	}
 
-	return dp[n]
+	return dp[0]
 }
 
 func main() {
