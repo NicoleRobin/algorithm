@@ -1,12 +1,25 @@
 package main
 
+import "math"
+
+/*
+思路：动态规划
+1、
+*/
 func maxProfit(prices []int) int {
-	var ans int
-
-	// 这里可以添加具体的逻辑来计算最大利润
-	// 例如，使用动态规划或贪心算法等
-
-	return ans
+	const k = 2
+	f := [k + 2][2]int{}
+	for j := 1; j <= k+1; j++ {
+		f[j][1] = math.MinInt / 2 // 防止溢出
+	}
+	f[0][0] = math.MinInt / 2
+	for _, p := range prices {
+		for j := k + 1; j > 0; j-- {
+			f[j][0] = max(f[j][0], f[j][1]+p)
+			f[j][1] = max(f[j][1], f[j-1][0]-p)
+		}
+	}
+	return f[k+1][0]
 }
 
 func main() {
