@@ -7,7 +7,6 @@ dp[i][j]:
 2、
 */
 func soupServings(n int) float64 {
-	var res float64
 	if n > 4800 {
 		return 1.0
 	}
