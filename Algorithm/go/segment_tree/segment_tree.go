@@ -10,7 +10,11 @@ type SegmentTree struct {
 func NewSegmentTree(nums []int) *SegmentTree {
 	n := len(nums)
 	tree := make([]int, 4*n) // 线段树大小一般取 4 倍空间
-	st := &SegmentTree{nums, tree, n}
+	st := &SegmentTree{
+		data: nums,
+		tree: tree,
+		n:    n,
+	}
 	st.build(1, 0, n-1)
 	return st
 }
