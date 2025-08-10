@@ -2,43 +2,59 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"sort"
 )
 
 func permuteUnique(nums []int) [][]int {
+	// 将相同的数字排在一起
 	sort.Ints(nums)
-	result := [][]int{}
-	backtrack(nums, 0, &result)
-	return result
-}
-
-func backtrack(nums []int, index int, result *[][]int) {
-	fmt.Printf("nums:%+v, index:%d, result:%+v\n", nums, index, result)
-	if index == len(nums) {
-		tmp := make([]int, len(nums))
-		copy(tmp, nums)
-		*result = append(*result, tmp)
-		return
-	}
-
-	numMap := map[int]interface{}{}
-	for i := index; i < len(nums); i++ {
-		if _, ok := numMap[nums[i]]; ok {
-			continue
-		} else {
-			numMap[nums[i]] = struct{}{}
+	var backtrack func(int, []int)
+	var res [][]int
+	visitedIndexSet := map[int]bool{}
+	backtrack = func(index int, memo []int) {
+		// fmt.Println("index:", index, ", memo:", memo, ", selectedIndexSet:", selectedIndexSet)
+		if index == len(nums) {
+			res = append(res, append([]int{}, memo...))
+			return
 		}
-		nums[index], nums[i] = nums[i], nums[index]
-		fmt.Printf("index:%d, before:%+v\n", index, nums)
-		backtrack(nums, index+1, result)
-		nums[i], nums[index] = nums[index], nums[i]
-		fmt.Printf("index:%d, after:%+v\n", index, nums)
+
+		for i := 0; i < len(nums); i++ {
+			if visitedIndexSet[i] {
+				continue
+			}
+			if i > 0 && !visitedIndexSet[i-1] && nums[i] == nums[i-1] {
+				// 跳过当前循环中选择过的重复的数字
+				continue
+			}
+			visitedIndexSet[i] = true
+			memo = append(memo, nums[i])
+			backtrack(index+1, memo)
+			visitedIndexSet[i] = false
+			memo = memo[:len(memo)-1]
+		}
 	}
+	backtrack(0, []int{})
+
+	return res
 }
 
 func main() {
-	fmt.Println("leetcode-47")
-	nums := []int{1, 1, 2}
-	allList := permuteUnique(nums)
-	fmt.Println(allList)
+	testCases := []struct {
+		nums     []int
+		expected [][]int
+	}{
+		{
+			nums:     []int{1, 1, 2},
+			expected: [][]int{},
+		},
+	}
+	for i, tc := range testCases {
+		res := permuteUnique(tc.nums)
+		if reflect.DeepEqual(res, tc.expected) {
+			fmt.Printf("Case %d fail, res:%v, expected:%v\n", i, res, tc.expected)
+		} else {
+			fmt.Printf("Case %d pass\n", i)
+		}
+	}
 }
