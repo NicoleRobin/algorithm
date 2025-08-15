@@ -57,8 +57,8 @@ func (st *SegmentTree) build(node, l, r int) {
 }
 
 // Query 区间和查询
-func (st *SegmentTree) Query(max int) int {
-	return st.query(1, 0, st.n-1, max)
+func (st *SegmentTree) Query(value int) int {
+	return st.query(1, 0, st.n-1, value)
 }
 
 func (st *SegmentTree) query(node, l, r, value int) int {
