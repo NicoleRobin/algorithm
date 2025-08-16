@@ -9,7 +9,7 @@ type NumArray struct {
 func Constructor(nums []int) NumArray {
 	n := len(nums)
 	tree := make([]int, 4*n) // 线段树大小一般取 4 倍空间
-	st := &NumArray{
+	st := NumArray{
 		nums: nums,
 		tree: tree,
 		n:    n,
@@ -18,41 +18,49 @@ func Constructor(nums []int) NumArray {
 	return st
 }
 
-func (this *NumArray) build(node, l, r int) int {
+func (this *NumArray) build(node, l, r int) {
 	if l == r {
-		st.tree[node] = st.nums[l]
-		return
+		this.tree[node] = this.nums[l]
 	}
 	mid := (l + r) / 2
-	left := st.build(node*2, l, mid)
-	right := st.build(node*2+1, mid+1, r)
-	st.tree[node] = left + right
-	return st.tree[node]
+	this.build(node*2, l, mid)
+	this.build(node*2+1, mid+1, r)
+	this.tree[node] = this.tree[node*2] + this.tree[node*2+1]
 }
 
 func (this *NumArray) Update(index int, val int) {
-
+	this.update(1, 0, this.n-1, index, val)
 }
 
-func (this *NumArray) update(index int, val int) {
-
+func (this *NumArray) update(node, l, r, index, val int) {
+	if l == r {
+		this.tree[node] = val
+		return
+	}
+	mid := (l + r) / 2
+	if index <= mid {
+		this.update(node*2, l, mid, index, val)
+	} else {
+		this.update(node*2+1, mid+1, r, index, val)
+	}
+	this.tree[node] = this.tree[node*2] + this.tree[node*2+1]
 }
 
 func (this *NumArray) SumRange(left int, right int) int {
-
+	return this.query(1, 0, this.n-1, left, right)
 }
 
-func (this *NumArray) query(node, l, r int) int {
-	if l == r {
-		return l
+func (this *NumArray) query(node, l, r, qL, qR int) int {
+	if qL > r || qR < l {
+		return 0 // 不相交
 	}
-
+	if qL <= l && r <= qR {
+		return this.tree[node] // 完全包含
+	}
 	mid := (l + r) / 2
-	left := st.query(node*2, l, mid, value)
-	if left != -1 {
-		return left
-	}
-	return st.query(node*2+1, mid+1, r, value)
+	left := this.query(node*2, l, mid, qL, qR)
+	right := this.query(node*2+1, mid+1, r, qL, qR)
+	return left + right
 }
 
 /**
