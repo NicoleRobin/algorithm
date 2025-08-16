@@ -1,5 +1,10 @@
 package segment_tree
 
+/*
+SegmentTree segment tree
+data: origin number array
+tree:
+*/
 type SegmentTree struct {
 	data []int
 	tree []int
@@ -19,7 +24,11 @@ func NewSegmentTree(nums []int) *SegmentTree {
 	return st
 }
 
-// build 构建函数（递归）
+/*
+build 构建线段树，其实就是在tree中计算对应区间的值
+node: 树节点，1是根节点，左孩子节点是node*2，右孩子节点是node*2+1
+l, r: 是区间，当l==r时表示到了叶子节点
+*/
 func (st *SegmentTree) build(node, l, r int) {
 	if l == r {
 		st.tree[node] = st.data[l]
@@ -36,6 +45,11 @@ func (st *SegmentTree) Query(qL, qR int) int {
 	return st.query(1, 0, st.n-1, qL, qR)
 }
 
+/*
+node: 树节点
+l, r: node对应的区间
+qL, qR: 查询区间
+*/
 func (st *SegmentTree) query(node, l, r, qL, qR int) int {
 	if qL > r || qR < l {
 		return 0 // 不相交
@@ -54,6 +68,13 @@ func (st *SegmentTree) Update(index, val int) {
 	st.update(1, 0, st.n-1, index, val)
 }
 
+/*
+update 更新指定的值
+node: 树节点
+l, r: node对应的区间
+index: 要更新值的下标
+val: 要更新的值
+*/
 func (st *SegmentTree) update(node, l, r, index, val int) {
 	if l == r {
 		st.tree[node] = val
