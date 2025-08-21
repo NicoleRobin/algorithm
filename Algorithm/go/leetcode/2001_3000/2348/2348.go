@@ -4,9 +4,12 @@ import (
 	"fmt"
 )
 
-func zeroFilledSubarray(nums []int) int64 {
+/*
+思路：数学
+*/
+func zeroFilledSubarray1(nums []int) int64 {
 	if len(nums) == 0 {
-
+		return 0
 	}
 
 	var subArrayLenList []int
@@ -30,6 +33,23 @@ func zeroFilledSubarray(nums []int) int64 {
 	}
 
 	return res
+}
+
+/*
+思路：
+*/
+func zeroFilledSubarray(nums []int) int64 {
+	var ans int64
+	last := -1
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != 0 {
+			last = i
+		} else {
+			ans += int64(i - last)
+		}
+	}
+
+	return ans
 }
 
 func main() {
