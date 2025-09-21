@@ -7,26 +7,24 @@ import (
 
 /*
 思路：动态规划
-1、状态定义：dp[i]: i的方案数
-2、状态转移方程：dp[i] = dp[i-1^x] + dp[i-2^x] + ...
 */
 func numberOfWays(n int, x int) int {
-	dp := make([]int, n+1)
-	dp[1] = 1
-	for i := 2; i <= n; i++ {
-		var tmpSum int
-		for j := 1; j <= i; j++ {
-			powerOfJ := int(math.Pow(float64(j), float64(x)))
-			if powerOfJ >= i {
-				break
-			}
-			tmpSum += dp[i-powerOfJ]
-		}
-		dp[i] = tmpSum
+	const mod = 1_000_000_007
+	dp := make([][]int64, n+1)
+	for i := range dp {
+		dp[i] = make([]int64, n+1)
 	}
-	fmt.Println("dp:", dp)
-
-	return dp[n]
+	dp[0][0] = 1
+	for i := 1; i <= n; i++ {
+		val := int64(math.Pow(float64(i), float64(x)))
+		for j := 0; j <= n; j++ {
+			dp[i][j] = dp[i-1][j]
+			if j >= int(val) {
+				dp[i][j] = (dp[i][j] + dp[i-1][j-int(val)]) % mod
+			}
+		}
+	}
+	return int(dp[n][n])
 }
 
 func main() {
