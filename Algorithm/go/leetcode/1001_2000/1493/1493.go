@@ -32,9 +32,11 @@ func longestSubarray1(nums []int) int {
 }
 
 /*
+思路：
+维护一个 “允许包含最多 1 个 0” 的窗口
+
 思考：
 1、虽然最终通过各种优化解决了这个问题，但是做题的时候还是总是在尝试，无法在最一开始想到滑动窗口方案时就把思路想明白，还需要继续学习呀；
-2、
 */
 func longestSubarray(nums []int) int {
 	var ans int
