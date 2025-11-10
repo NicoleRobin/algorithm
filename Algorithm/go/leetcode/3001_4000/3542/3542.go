@@ -5,6 +5,9 @@ import (
 	"sort"
 )
 
+/*
+单调栈
+*/
 func minOperations(nums []int) int {
 	var res int
 	if len(nums) == 0 {
