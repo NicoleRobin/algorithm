@@ -21,6 +21,8 @@ func countBit1(n int) int {
 
 /*
 Brian Kernighan 算法
+n &= n - 1: 消除最左边的1
+n &= n - 1 = 0: 用于判断是否是2的幂
 */
 func countBit(n int) int {
 	count := 0
